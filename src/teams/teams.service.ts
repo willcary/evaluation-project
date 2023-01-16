@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Team } from './types/types';
+import { CreateTeam, Team } from './schemas/schemas';
 
 @Injectable()
 export class TeamsService {
@@ -14,5 +14,11 @@ export class TeamsService {
 
   findById(teamId: number) {
     return this.teams.find((team) => team.id === teamId);
+  }
+
+  createTeam(createTeam: CreateTeam): Team {
+    const newTeam = { id: Date.now(), ...createTeam };
+    this.teams.push(newTeam);
+    return newTeam;
   }
 }
