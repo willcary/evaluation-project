@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { Team } from './entities/team.entity';
-import { CreateTeam } from './schemas/schemas';
+import { CreateTeam } from './dto/create-team.dto';
 import { TeamsService } from './teams.service';
 
 @ApiTags('teams')
@@ -22,7 +22,6 @@ export class TeamsController {
   @ApiOkResponse({ type: Team, description: 'get specific team' })
   @Get('team/:id')
   getTeamById(@Param('id') id: string): any {
-    // TODO: auto parse
     return this.teamsService.findById(Number(id));
   }
 
