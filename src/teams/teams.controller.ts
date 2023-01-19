@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { CreateTeam, Team } from './schemas/schemas';
+import { Team } from './entities/team.entity';
+import { CreateTeam } from './schemas/schemas';
 import { TeamsService } from './teams.service';
-// import { Team } from './types/types';
 
 @ApiTags('teams')
 @Controller('api')
