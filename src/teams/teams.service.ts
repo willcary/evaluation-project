@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTeam, Team } from './schemas/schemas';
+import { Team } from './entities/team.entity';
+import { CreateTeam } from './dto/create-team.dto';
 
 @Injectable()
 export class TeamsService {
