@@ -51,12 +51,7 @@ describe('TeamsService', () => {
   });
 
   // it('should throw error', () => {
-  //   const team: Team = { name: 'Chipmunks', numMembers: 44, numCoaches: 5 };
-  //   expect(mockTeamsService.createTeam(team)).toEqual({
-  //     id: expect.any(Number),
-  //     name: 'Chipmunks',
-  //     numMembers: 44,
-  //     numCoaches: 5,
-  //   });
+  //   const team: Team = { name: 'Chipmunks', numMembers: 600, numCoaches: 6.6 };
+  //   expect(mockTeamsService.createTeam(team)).toThrow(/400/);
   // });
 });
