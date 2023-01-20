@@ -1,7 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt, IsString } from 'class-validator';
-// **Using Max/Min values creeating module import error**
-// import { Max, Min } from 'class-validator/types/decorator/decorators';
+import { IsInt, IsString, Min, Max } from 'class-validator';
 
 export class CreateTeam {
   @ApiProperty()
@@ -10,13 +8,13 @@ export class CreateTeam {
 
   @ApiProperty()
   @IsInt()
-  // @Min(1)
-  // @Max(500)
+  @Min(1)
+  @Max(500)
   numMembers: number;
 
   @ApiProperty()
   @IsInt()
-  // @Min(0)
-  // @Max(50)
+  @Min(0)
+  @Max(50)
   numCoaches: number;
 }
