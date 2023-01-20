@@ -8,9 +8,7 @@ import {
   UnprocessableEntityException,
 } from '@nestjs/common';
 import {
-  ApiBadRequestResponse,
   ApiCreatedResponse,
-  ApiNotFoundResponse,
   ApiOkResponse,
   ApiTags,
   ApiUnprocessableEntityResponse,
@@ -36,7 +34,7 @@ export class TeamsController {
   }
 
   @ApiOkResponse({ type: Team, description: 'get specific team' })
-  // @ApiUnprocessableEntityResponse()
+  @ApiUnprocessableEntityResponse()
   @Get('team/:id')
   getTeamById(@Param('id', ParseIntPipe) id: number): Team {
     const team = this.teamsService.findById(Number(id));
@@ -49,7 +47,7 @@ export class TeamsController {
   }
 
   @ApiCreatedResponse({ type: Team, description: 'post a new team' })
-  // @ApiUnprocessableEntityResponse()
+  @ApiUnprocessableEntityResponse()
   @Post('teams')
   createTeam(@Body() body: CreateTeam): any {
     return this.teamsService.createTeam(body);
