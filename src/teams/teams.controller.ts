@@ -18,7 +18,7 @@ import { CreateTeam } from './dto/create-team.dto';
 import { TeamsService } from './teams.service';
 // import { Team } from './types/types';
 
-@ApiTags('teams')
+@ApiTags('Teams')
 @Controller('api')
 export class TeamsController {
   constructor(private teamsService: TeamsService) {}
